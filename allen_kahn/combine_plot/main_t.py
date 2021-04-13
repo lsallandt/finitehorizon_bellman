@@ -27,6 +27,8 @@ load_num_polit = 'V_p_'
 v_openloop = valuefunction_TT.Valuefunction_TT(load_num_openloop, True)
 v_polit = valuefunction_TT.Valuefunction_TT(load_num_polit, True)
 testOde = ode.Ode()
+v_openloop.calc_end_reward_grad = testOde.calc_end_reward_grad
+v_polit.calc_end_reward_grad = testOde.calc_end_reward_grad
 # testOde.test()
 
 t_vec = np.load('t_vec.npy')
